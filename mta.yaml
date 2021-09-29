@@ -9,6 +9,20 @@ modules:
    requires:
     - name: hdi_tinydb
 
+
+ - name: tinyjs
+   type: nodejs
+   path: tinyjs
+   provides:
+    - name: tinyjs_api
+      properties:
+         url: ${default-url}
+
+
+ - name: tinyui
+   type: html5
+   path: tinyui
+
 resources:
  - name: hdi_tinydb
    parameters:

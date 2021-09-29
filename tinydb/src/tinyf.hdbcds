@@ -1,5 +1,10 @@
 context tinyf {
-  entity world {
-    key continent: String(100);
-  };
+    entity world {
+        key continent : String(100);
+    };
+};
+
+/*@@layout{"layoutInfo":{"x":-120,"y":75.5}}*/
+entity Country {
+    key name : String(100);
 };
