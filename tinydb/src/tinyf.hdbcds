@@ -1,10 +1,13 @@
+/*@@layout{"layoutInfo":{"x":-435,"y":-189}}*/
 context tinyf {
+    /*@@layout{"layoutInfo":{"x":-161.3515625,"y":-131}}*/
     entity world {
         key continent : String(100);
     };
-};
 
-/*@@layout{"layoutInfo":{"x":-120,"y":75.5}}*/
-entity Country {
-    key name : String(100);
+    /*@@layout{"layoutInfo":{"x":-469,"y":-116.5}}*/
+    entity country {
+        key name   : String(100);
+            partof : association[0..1] to tinyf.world;
+    };
 };
