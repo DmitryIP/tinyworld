@@ -1,5 +1,8 @@
 {
 	"welcomeFile": "index.html",
 	"authenticationMethod": "none",
-	"routes": []
+	"routes": [{
+		"source": "(.*)(.xsodata)",
+		"destination": "tinyjs-backend"
+	}]
 }
