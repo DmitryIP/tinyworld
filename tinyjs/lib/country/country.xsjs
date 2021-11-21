@@ -1,16 +1,22 @@
 function saveCountry(country) {
-var conn = $.hdb.getConnection();
-var output = JSON.stringify(country);
-var fnCreateCountry = conn.loadProcedure("createCountry");
-var result = fnCreateCountry({IM_COUNTRY: country.name, IM_CONTINENT: country.partof});
-conn.commit();
-conn.close();
-if (result && result.EX_ERROR !== null) { return result.EX_ERROR;}
-else { return output; }
+	var conn = $.hdb.getConnection();
+	var output = JSON.stringify(country);
+	var fnCreateCountry = conn.loadProcedure("createCountry");
+	var result = fnCreateCountry({
+		IM_COUNTRY: country.name,
+		IM_CONTINENT: country.partof
+	});
+	conn.commit();
+	conn.close();
+	if (result && result.EX_ERROR !== null) {
+		return result.EX_ERROR;
+	} else {
+		return output;
+	}
 }
 var country = {
-  name: $.request.parameters.get("name"),
-  partof: $.request.parameters.get("continent")
+	name: $.request.parameters.get("name"),
+	partof: $.request.parameters.get("continent")
 };
 // validate the inputs here!
 var output = saveCountry(country);

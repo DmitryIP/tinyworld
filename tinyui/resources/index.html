@@ -4,20 +4,38 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
 <title>tinyworld</title>
+
 <!-- 1.) Load SAPUI5 (from a remote server), select theme and control library -->
 <script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
 	id="sap-ui-bootstrap" data-sap-ui-libs="sap.m, sap.ui.table"
 	data-sap-ui-theme="sap_bluecrystal">
 </script>
+<script src="./Util.js" ></script>
 <!-- 2.) Create a UI5 button and place it onto the page -->
-<script>
+
+ <script>
+  var oModel = new sap.ui.model.odata.ODataModel("/euro.xsodata", true);
+  var oTable = new sap.ui.table.Table({ title: "European Countries" });
+  oTable.addColumn(new sap.ui.table.Column({ label: "Country Name", template: "name" }));
+  oTable.setModel(oModel); oTable.bindRows("/euro"); oTable.placeAt("uiArea");
+</script> 
+
+<!-- <script>
 	var oModel = new sap.ui.model.odata.v2.ODataModel("/euro.xsodata", true);
-	var oTable = new sap.ui.table.Table({ title: "European Countries"  });
+	var oTable = new sap.ui.table.Table({ 
+		title: "European Countries", 
+		visibleRowCount: 5,
+		id: "tinytab",
+		toolbar: new sap.ui.commons.Toolbar({items: [
+              new sap.ui.commons.Button({text: "Add Country", press:openFirstDialog})
+			]
+		})
+	});
 	oTable.addColumn(new sap.ui.table.Column({ label: "Country name", template: "name" }));
 	oTable.setModel(oModel);
 	oTable.bindRows("/euro");
 	oTable.placeAt("uiArea");
-</script>
+</script> -->
 </head>
 <body class="sapUiBody">
 	<!-- This is where you place the UI5 button -->
