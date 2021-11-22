@@ -1,38 +1,40 @@
+$.sap.require("sap.ui.layout.form.SimpleForm");
+
 var oFirstDialog;
 
 function openFirstDialog() {
 	if (oFirstDialog) {
 		oFirstDialog.open();
 	} else {
-		oFirstDialog = new sap.ui.commons.Dialog({
+		oFirstDialog = new sap.m.Dialog({
 			width: "400px", // sap.ui.core.CSSSize
 			height: "550px", // sap.ui.core.CSSSize
 			title: "Country Details", // string
 			applyContentPadding: true, // boolean
 			modal: true, // boolean
-			content: [new sap.ui.commons.form.SimpleForm({
+			content: [new sap.ui.layout.form.SimpleForm({
 					content: [
 						new sap.ui.core.Title({
 							text: "Country Name"
 						}),
-						new sap.ui.commons.Label({
+						new sap.m.Label({
 							text: "name"
 						}),
-						new sap.ui.commons.TextField({
+						new sap.m.Input({
 							value: "",
 							id: "name"
 						}),
-						new sap.ui.commons.Label({
+						new sap.m.Label({
 							text: "partof"
 						}),
-						new sap.ui.commons.TextField({
+						new sap.m.Input({
 							value: "",
 							id: "partof"
 						})
 					]
 				})] // sap.ui.core.Control
 		});
-		oFirstDialog.addButton(new sap.ui.commons.Button({
+		oFirstDialog.addButton(new sap.m.Button({
 			text: "OK",
 			press: function () {
 				var name = sap.ui.getCore().byId("name").getValue();
