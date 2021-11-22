@@ -13,14 +13,14 @@
 <script src="./Util.js" ></script>
 <!-- 2.) Create a UI5 button and place it onto the page -->
 
- <script>
+ <!-- <script>
   var oModel = new sap.ui.model.odata.ODataModel("/euro.xsodata", true);
   var oTable = new sap.ui.table.Table({ title: "European Countries" });
   oTable.addColumn(new sap.ui.table.Column({ label: "Country Name", template: "name" }));
   oTable.setModel(oModel); oTable.bindRows("/euro"); oTable.placeAt("uiArea");
-</script> 
+</script> -->
 
-<!-- <script>
+<script>
 	var oModel = new sap.ui.model.odata.v2.ODataModel("/euro.xsodata", true);
 	var oTable = new sap.ui.table.Table({ 
 		title: "European Countries", 
@@ -35,7 +35,7 @@
 	oTable.setModel(oModel);
 	oTable.bindRows("/euro");
 	oTable.placeAt("uiArea");
-</script> -->
+</script> 
 </head>
 <body class="sapUiBody">
 	<!-- This is where you place the UI5 button -->

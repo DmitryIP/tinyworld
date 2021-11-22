@@ -4,5 +4,8 @@
 	"routes": [{
 		"source": "(.*)(.xsodata)",
 		"destination": "tinyjs-backend"
+	}, {
+		"source": ".*\\.xsjs",
+		"destination": "tinyjs-backend"
 	}]
 }
