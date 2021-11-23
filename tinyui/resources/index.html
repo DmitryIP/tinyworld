@@ -27,7 +27,11 @@
 		visibleRowCount: 5,
 		id: "tinytab",
 		toolbar: new sap.m.Toolbar({content: [
-              new sap.m.Button({text: "Add Country", press:openFirstDialog})
+            	 new sap.m.Button({text: "Add Country", 
+            					type: sap.m.ButtonType.Emphasized,
+            					icon: "sap-icon://add",
+            					press:openFirstDialog
+        		})
 			]
 		})
 	});
